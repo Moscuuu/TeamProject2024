@@ -5,7 +5,7 @@ from qna import extract_text_from_pptx, generate_qna, to_list
 import google.generativeai as genai
 from bs4 import BeautifulSoup
 
-app = Flask(__name__, static_folder='build', static_url_path='')
+app = Flask(__name__, static_folder='build', static_url_path='/')
 UPLOAD_FOLDER = 'uploads'
 genai.configure(api_key="AIzaSyDG4L7ze9_nZeGZ5SKFifBoDYkpiFTfPuk")  # Replace with your actual API key
 CORS(app)
@@ -57,12 +57,9 @@ def generate_questions():
     questions = [{'question': q, 'answer': a} for q, a in qna_list]
     return jsonify({'questions': questions})
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve_react_app(path):
-    if path and os.path.exists(os.path.join(app.static_folder, path)):
-        return send_from_directory(app.static_folder, path)
-    return send_from_directory(app.static_folder, 'index.html')
+@app.route('/')
+def index():
+  return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
     app.run(port=5000)
