@@ -1,8 +1,0 @@
-{
-    "appService.zipIgnorePattern": [
-        "node_modules{,/**}",
-        ".vscode{,/**}"
-    ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/65e0d653-12ca-4467-a48b-6b937891bdf7/resourceGroups/TeamProject2024_group/providers/Microsoft.Web/sites/TeamProject2024",
-    "appService.deploySubpath": "backend\\build"
-}
