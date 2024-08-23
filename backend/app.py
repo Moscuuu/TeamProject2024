@@ -28,6 +28,9 @@ def generate_notes(text):
     )
     return response.result
 
+@app.route('/status', methods=['GET'])
+def check_status():
+    return "I am on"
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
