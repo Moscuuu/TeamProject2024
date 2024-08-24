@@ -1,0 +1,6 @@
+Flask
+Flask-CORS
+google-generativeai
+beautifulsoup4
+python-pptx
+gunicorn
